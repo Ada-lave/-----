@@ -2,9 +2,7 @@ from django.shortcuts import render
 from .models import DataVegetables
 from .forms import MyForm
 
-def showDataBase(request):
-    vegetables = DataVegetables.objects.all()
-    return render(request,'Earth/page.html',{'data':vegetables})
+
 
 
 def addVeg(request):
@@ -14,4 +12,9 @@ def addVeg(request):
             form.save()
     else:
         form = MyForm()
-    return render(request,"Earth/getVeg.html",{'form':form})
+    return render(request,"Earth/form/getVeg.html",{'form':form})
+
+
+def main_page(request):
+    return render(request,'Earth/main/index.html')    
+
