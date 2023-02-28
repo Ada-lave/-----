@@ -20,5 +20,6 @@ from Earth import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('addVeg/',views.addVeg,name='addVeg'),
-    path('index/', views.main_page, name = 'index')
+    path('index/', views.main_page, name = 'index'),
+    path('',views.show_test)
 ]
