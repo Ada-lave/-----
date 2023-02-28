@@ -1,0 +1,16 @@
+.title {
+    height: 100px;
+    width: 100px;
+}
+body{
+    display: flex;
+}
+
+.test{
+    display: flex;
+}
+
+.sales{
+    background-color: brown;
+    margin-right: 15px;
+}
