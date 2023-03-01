@@ -19,4 +19,5 @@ from Earth import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('registrations/',views.RegForm, name='registration')
 ]
