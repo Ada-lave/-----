@@ -13,7 +13,7 @@ class ProfileUser(models.Model):
     first_name = models.CharField(max_length=120)
     last_name = models.CharField(max_length=200)
     age = models.CharField(max_length=5)
-    address = models.CharField(max_length=1000,default='Екатеринбур')
+    address = models.CharField(max_length=1000)
     number_phone = models.CharField(max_length=100)
     email = models.EmailField(max_length=200)
     
