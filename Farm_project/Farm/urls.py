@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Earth import views
+from Earth.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('registrations/',views.RegForm, name='registration'),
-    
+    path('registrations/',UserCreated.as_view(), name='registration')
 ]
