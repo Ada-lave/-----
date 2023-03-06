@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from .forms import SigUpForm
 from .models import ProfileUser
-
+from django.views import View
 def update_user(user):
     ProfileUser.objects.update_or_create(user=user)
 

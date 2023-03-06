@@ -22,4 +22,10 @@ class ProfileUser(models.Model):
         return self.user.username
     
 
-    
+class VegetableCard(models.Model):
+    user = models.ForeignKey(ProfileUser,on_delete=models.CASCADE)
+    name = models.CharField(max_length=120)
+    description = models.TextField(max_length=1000)
+    photo = models.ImageField()
+    data_of_pick = models.DateField()
+    price = models.CharField(max_length=100)
