@@ -3,6 +3,7 @@ from django.conf import settings
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 
@@ -17,9 +18,11 @@ class ProfileUser(models.Model):
     number_phone = models.CharField(max_length=100)
     email = models.EmailField(max_length=200)
     
-    
     def __str__(self):
         return self.user.username
+
+    def return_absolute_url(self):
+        return reverse("user_pk", kwargs={'pk':self.pk})
     
 
     
