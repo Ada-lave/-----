@@ -1,13 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
 from .forms import SigUpForm
 from .models import ProfileUser
 from django.views.generic.edit import FormView
 from django.views.generic import ListView
 
-
-def update_user(user):
-    ProfileUser.objects.update_or_create(user=user)
+@login_required
+def show_profile(request):
+    return render(request,'Earth/main/home.html')
+    
 
 
 class UserCreated(FormView):
