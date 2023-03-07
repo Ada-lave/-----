@@ -5,6 +5,6 @@ class DataVegetables(models.Model):
     price = models.IntegerField(max_length=100)
     description = models.TextField(max_length=1000)
 
-class User(models.model):
+class User(models.Model):
     name = models.CharField(max_length=65)
     age = models.CharField(max_length=1000)
