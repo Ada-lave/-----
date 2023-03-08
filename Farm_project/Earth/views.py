@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from .forms import SigUpForm
-from .models import ProfileUser
+from .models import ProfileUser, VegetableCard
 from django.views.generic.edit import FormView
 from django.views.generic import ListView
 
@@ -10,7 +10,12 @@ from django.views.generic import ListView
 def show_profile(request):
     return render(request,'Earth/main/home.html')
     
-
+def test(request):
+    print(request.user)
+    profile = ProfileUser.objects.filter(user =  request.user)
+    Veg = VegetableCard.objects.filter(user = request.user)
+    
+    return render(request,'Earth/main/index.html', {'veg':Veg})
 
 class UserCreated(FormView):
     form_class = SigUpForm
