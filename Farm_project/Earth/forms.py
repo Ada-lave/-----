@@ -1,8 +1,10 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .models import *
 
 class SigUpForm(UserCreationForm):
+    '''Форма для регистрации юзера'''
     username = forms.CharField(max_length=128)
     email = forms.EmailField(max_length=200)
     age = forms.CharField(max_length=100)
@@ -14,3 +16,17 @@ class SigUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username','first_name','last_name','age','number_phone','adress','email','password1','password2')
+
+class AddProductsForm(forms.ModelForm):
+    '''Форма для добавления овощей'''
+    name = forms.CharField(max_length=120)
+    description = forms.CharField(max_length=1000)
+    category = forms.CharField(max_length=50)
+    photo = forms.ImageField()
+    data_of_pick = forms.DateField()
+    price = forms.CharField(max_length=100)
+    class Meta:
+        model = ProductCard
+        fields = ('name','description','category','photo','data_of_pick','price')
+    
+

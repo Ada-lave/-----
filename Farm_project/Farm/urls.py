@@ -22,5 +22,6 @@ urlpatterns = [
     path('registrations/',UserCreated.as_view(), name='registration'),
     path('',include('Earth.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
-    path('test', test)
+    path('test', test),
+    path('add', AddVegetable.as_view())
 ]
