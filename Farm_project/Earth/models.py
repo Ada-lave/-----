@@ -1,10 +1,38 @@
 from django.db import models
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.contrib.auth.models import User
+from django.urls import reverse
 
-class DataVegetables(models.Model):
-    title = models.CharField(max_length=65)
-    price = models.IntegerField(max_length=100)
+
+
+
+
+class ProfileUser(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE,default=1)
+    first_name = models.CharField(max_length=120)
+    last_name = models.CharField(max_length=200)
+    age = models.CharField(max_length=5)
+    address = models.CharField(max_length=1000)
+    number_phone = models.CharField(max_length=100)
+    email = models.EmailField(max_length=200)
+    
+    def __str__(self):
+        return self.user.username
+
+    def return_absolute_url(self):
+        return reverse("user_pk", kwargs={'pk':self.pk})
+    
+
+class ProductCard(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    name = models.CharField(max_length=120)
     description = models.TextField(max_length=1000)
+    category = models.CharField(max_length=50)
+    price = models.CharField(max_length=100)
 
-class User(models.Model):
+
+class User(models.model):
     name = models.CharField(max_length=65)
     age = models.CharField(max_length=1000)
