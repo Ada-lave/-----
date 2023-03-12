@@ -33,6 +33,6 @@ class ProductCard(models.Model):
     price = models.CharField(max_length=100)
 
 
-class User(models.model):
+class User(models.Model):
     name = models.CharField(max_length=65)
     age = models.CharField(max_length=1000)

@@ -23,10 +23,5 @@ class AddProductsForm(forms.ModelForm):
         model = ProductCard
         fields = ['name','description','category','price']
 
-class PostForm(forms.ModelForm):
-    post = forms.CharField(max_length=120)
 
-    class Meta:
-        model = User
-        fields = ('text',)
 

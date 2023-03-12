@@ -3,7 +3,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from .forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import ProfileUser, ProductCard, Post
+from .models import ProfileUser, ProductCard
 from django.views.generic.edit import FormView
 from django.views.generic import ListView, CreateView
 
