@@ -7,6 +7,10 @@ from .models import ProfileUser, ProductCard, Post
 from django.views.generic.edit import FormView
 from django.views.generic import ListView, CreateView
 
+
+def MainPage(request):
+    return render(request, 'Earth/main/index.html')
+
 @login_required
 def show_profile(request):
     '''Тестовое отображение профиля'''
@@ -39,16 +43,10 @@ class UserCreated(FormView):
         return super(UserCreated, self).form_valid(form)
 
 
-# class AddVegetable(CreateView):
-#     model = ProductCard
-#     template_name = 'Earth/form/getVeg.html'
-#     success_url = 'profile'
-#     form_class = AddProductsForm
-
-#     def from_valid(self,form):
-#         form.instance.user = self.request.user
-#         self.model.user = self.request.user 
-#         return super(AddVegetable,self).form_valid(form)
+class AddProduct(CreateView):
+    model = ProductCard
+    form_class = AddProductsForm
+    template_name = 'Earth/form/getVeg.html'
     
 
 def AddProducts(request):

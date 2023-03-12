@@ -4,4 +4,5 @@ app_name = "Earth"
 
 urlpatterns = [
     path('profile', show_profile, name='profile'),
+    path('', MainPage)
 ]

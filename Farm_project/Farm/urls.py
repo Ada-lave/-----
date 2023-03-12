@@ -23,5 +23,5 @@ urlpatterns = [
     path('',include('Earth.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
     path('test', test),
-    path('add', AddProducts)
+    path('add', AddProducts),
 ]
