@@ -8,7 +8,6 @@ def save_user_profile(sender, instance,created, **kwargs):
     if created:
         profile = ProfileUser()
         profile.user = instance
-        print(instance.__dict__)
         if 'age' in instance.__dict__:
             profile.age = instance.__dict__['age']
         profile.save()

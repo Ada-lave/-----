@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,30 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <form class="test" method="POST">
-    {% csrf_token %}
-    <div class="title">
-        {{ form.title.errors }}
-        <label for="{{ form.title.id_for_lable }}">Название продукта</label>
-        {{ form.title }}
-    </div>
-    
-    <div class="title">
-        {{ form.price.errors }}
-        <label for="{{ form.price.id_for_lable }}">Цена продукта</label>
-        {{ form.price }}
-    </div>
-    
-    <div class="title">
-        {{ form.description.errors }}
-        <label for="{{ form.description.id_for_lable }}">Описание продукта</label>
-        {{ form.description }}
-    </div>
-
-    <button type="submit">Отправить</button>
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+            <p>{{ field.help_text }}</p>
+            {% endif %}
+            {% for error in field.errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+        {% endfor %}
+        <button type="submit">Добавить</button>
     </form>
 </body>
 </html>
+
+
+
