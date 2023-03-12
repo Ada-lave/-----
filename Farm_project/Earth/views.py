@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
-from .forms import SigUpForm, AddProductsForm
-from .models import ProfileUser, ProductCard
+from .forms import *
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import ProfileUser, ProductCard, Post
 from django.views.generic.edit import FormView
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 
 @login_required
 def show_profile(request):
@@ -38,14 +39,32 @@ class UserCreated(FormView):
         return super(UserCreated, self).form_valid(form)
 
 
-class AddVegetable(FormView):
-    form_class = AddProductsForm
-    template_name = 'Earth/form/getVeg.html'
-    success_url = ''
+# class AddVegetable(CreateView):
+#     model = ProductCard
+#     template_name = 'Earth/form/getVeg.html'
+#     success_url = 'profile'
+#     form_class = AddProductsForm
 
-    def form_valid(self, form):
-        ProductCard.objects.create(user=self.request.user,name=form.cleaned_data.get['name'],category=form.cleaned_data['category'],\
-                                   description=form.cleaned_data['description'],data_of_pick=form.cleaned_data['data_of_pick'],\
-                                    photo=form.cleaned_data['photo'],price=form.cleaned_data['photo'])
-        return super(AddVegetable, self).form_valid(form)
+#     def from_valid(self,form):
+#         form.instance.user = self.request.user
+#         self.model.user = self.request.user 
+#         return super(AddVegetable,self).form_valid(form)
     
+
+def AddProducts(request):
+    form = AddProductsForm(request.POST,request.FILES)
+    if request.method == 'POST':
+        if form.is_valid():
+            product = form.save(commit=False)
+            product.user = request.user
+            product.photo = form.cleaned_data.get('photo')
+            product.name = form.cleaned_data.get('name')
+            product.description = form.cleaned_data.get('description')
+            product.price = form.cleaned_data.get('price')
+            product.category =  form.cleaned_data.get('category')
+            product.save()
+    else:
+        form = AddProductsForm()    
+    
+    return render(request, 'Earth/form/getVeg.html', {"form":form})
+            

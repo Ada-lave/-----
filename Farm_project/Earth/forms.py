@@ -19,14 +19,14 @@ class SigUpForm(UserCreationForm):
 
 class AddProductsForm(forms.ModelForm):
     '''Форма для добавления овощей'''
-    name = forms.CharField(max_length=120)
-    description = forms.CharField(max_length=1000)
-    category = forms.CharField(max_length=50)
-    photo = forms.ImageField()
-    data_of_pick = forms.DateField()
-    price = forms.CharField(max_length=100)
     class Meta:
         model = ProductCard
-        fields = ('name','description','category','photo','data_of_pick','price')
-    
+        fields = ['name','description','category','price']
+
+class PostForm(forms.ModelForm):
+    post = forms.CharField(max_length=120)
+
+    class Meta:
+        model = Post
+        fields = ('text',)
 
