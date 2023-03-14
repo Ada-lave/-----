@@ -47,7 +47,8 @@ class AddProduct(CreateView):
     model = ProductCard
     form_class = AddProductsForm
     template_name = 'Earth/form/getVeg.html'
-    
+    def form_valid(self,form):
+        form.instance.user = self.request.user
 
 def AddProducts(request):
     form = AddProductsForm(request.POST,request.FILES)
