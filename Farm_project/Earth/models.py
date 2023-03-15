@@ -31,6 +31,7 @@ class ProductCard(models.Model):
     description = models.TextField(max_length=1000)
     category = models.CharField(max_length=50)
     price = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='product/img/')
 
 
 class User(models.Model):

@@ -21,7 +21,7 @@ class AddProductsForm(forms.ModelForm):
     '''Форма для добавления овощей'''
     class Meta:
         model = ProductCard
-        fields = ['name','description','category','price']
+        fields = ['name','description','category','price','photo']
 
 
 
