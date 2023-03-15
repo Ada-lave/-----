@@ -15,7 +15,7 @@ class SigUpForm(UserCreationForm):
     
     class Meta:
         model = User
-        fields = ('username','first_name','last_name','age','number_phone','adress','email','password1','password2')
+        fields = ['username','first_name','last_name','age','number_phone','adress','email','password1','password2']
 
 class AddProductsForm(forms.ModelForm):
     '''Форма для добавления овощей'''

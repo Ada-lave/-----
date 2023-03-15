@@ -34,6 +34,3 @@ class ProductCard(models.Model):
     photo = models.ImageField(upload_to='product/img/')
 
 
-class User(models.Model):
-    name = models.CharField(max_length=65)
-    age = models.CharField(max_length=1000)
