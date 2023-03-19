@@ -20,71 +20,28 @@
 
     <!-- меню -->
 
-    <section class="MainMenu">
-        <!-- главный родитель меню -->
-            <ul class="MenuList">
-                <!-- список меню -->
-                    <li class="ItemMenu">Кто мы такие?</li>
-                    <li class="ItemMenu LongItemMenu">Что у нас можно продавать</li>
-                    <li class="ItemMenu LongItemMenu">Что у нас можно купить</li>
-                    <li class="ItemMenu">Правила</li>
-                    <!-- ячейки меню -->
-            </ul>
+    <section class="Menu">
 
 
-            <section class="profile">
-                
-                
-                
-                   
-                         
-                            <div class="UserImg">
-                                <a class="LinkUser" href="#"><img class="LinkUser" src="{% static 'img/User.svg' %}" alt=""></a>
-                            </div>
-                         
-                           
-                        
-                   
-
-               
-                <!-- фото пользователя -->
-
-
-                <div class="Name">
-                    {% if not user.is_authenticated %}
-                        <p class="UserName" >Войти в аккаунт</p>
-                            <!-- имя пользователя в профиле -->
-                    {% else %}
-                        <p class="UserName"> {{ user.first_name }} </p>
-                    {% endif %}
-                </div>
-                
-                <!-- рейтинг пользователя -->
-
-                <div class="RatingUser">
-
-                    <ul class="RatingUserList">
-                            
-                        <li class="RatingCell"><img class="RatingImg" src="{% static 'img/RatingStart.svg' %}" alt=""></li>
-                        <li class="RatingCell"><img class="RatingImg" src="{% static 'img/RatingStart.svg' %}" alt=""></li>
-                        <li class="RatingCell"><img class="RatingImg" src="{% static 'img/RatingStart.svg' %}" alt=""></li>
-                        <li class="RatingCell"><img class="RatingImg" src="{% static 'img/RatingStart.svg' %}" alt=""></li>
-                        <li class="RatingCell"><img class="RatingImg" src="{% static 'img/RatingStart.svg' %}" alt=""></li>
-                        
-                    </ul>
-
-                    <p class="reviwes">У вас нет отзывов</p>
-
-                   
-
-                </div>
-                <div class="line"> </div>
-            </section>
+        <ul class="MenuList">
+            <li class="MenuCell"><a href="#">О нас</a></li>
+            <li class="MenuCell"><a href="#">Правила продажи</a></li>
+            <li class="MenuCell"><a href="#">Каталог продуктов</a></li>
+            <li class="MenuCellLast"><a href="#">Контакты</a></li>
+        
             
+        </ul>
+
 
     </section>
 
+    <div class="Profile">
+        <div class="hui">
 
+        </div>
+    </div>
+
+  
 
 </header>
 

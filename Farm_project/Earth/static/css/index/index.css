@@ -23,6 +23,11 @@ body{
 }
 
 
+header{
+    display: flex;
+}
+
+
 .MainMenu{
     
     width: 1250px;
@@ -32,7 +37,6 @@ body{
 
 
 .MenuList{
-    width: 670px;
     margin-top: 58px;
     display: flex;
     font-size: 18px;
@@ -40,9 +44,9 @@ body{
 
 }
 
-.ItemMenu{
-    min-width: 144px;
-    margin-right: 20px;
+.MenuCell{
+    min-width: 54px;
+    margin-right: 145px;
 }
 
 .LongItemMenu{
@@ -57,9 +61,10 @@ body{
 
 
 .UserName{
+    text-align: center;
     margin-left: -83px;
     margin-top: 25px;
-    width: 227px;
+    width: 254px;
     font-size: 24px;
 }
 
@@ -81,7 +86,7 @@ body{
 .UserImg{
     margin-top: 25px;
     margin-left: 65px;
-    margin-right: 90px;
+    margin-right: 69px;
     width: 80px; 
     height: 80px;
     background: #83A7C9;
@@ -154,6 +159,8 @@ body{
 
 
 header{
+    margin: auto;
+    width: 1250px;
     margin-bottom: 57px;
 }
 
@@ -236,4 +243,16 @@ header{
 .CardImg{
     border-radius: 5px;
     width:304px ;
+}
+
+.hui{
+    margin-top: 10px;
+    background-color: red;
+    height: 100px;
+    width: 265px;
+}
+
+
+.Profile{
+    margin-left: auto;
 }
