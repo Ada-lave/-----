@@ -31,9 +31,6 @@ class ProductCard(models.Model):
     description = models.TextField(max_length=1000)
     category = models.CharField(max_length=50)
     price = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='product/img/')
 
 
-    
-class Post(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE, related_name='post')
-    text = models.CharField(max_length=120)

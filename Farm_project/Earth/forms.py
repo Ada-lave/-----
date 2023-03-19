@@ -15,18 +15,13 @@ class SigUpForm(UserCreationForm):
     
     class Meta:
         model = User
-        fields = ('username','first_name','last_name','age','number_phone','adress','email','password1','password2')
+        fields = ['username','first_name','last_name','age','number_phone','adress','email','password1','password2']
 
 class AddProductsForm(forms.ModelForm):
     '''Форма для добавления овощей'''
     class Meta:
         model = ProductCard
-        fields = ['name','description','category','price']
+        fields = ['name','description','category','price','photo']
 
-class PostForm(forms.ModelForm):
-    post = forms.CharField(max_length=120)
 
-    class Meta:
-        model = Post
-        fields = ('text',)
 
