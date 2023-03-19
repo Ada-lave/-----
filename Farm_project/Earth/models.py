@@ -10,6 +10,7 @@ from django.urls import reverse
 
 
 class ProfileUser(models.Model):
+    '''Модель с доп параметрами юзера'''
     user = models.OneToOneField(User, on_delete=models.CASCADE,default=1)
     first_name = models.CharField(max_length=120)
     last_name = models.CharField(max_length=200)
@@ -26,6 +27,7 @@ class ProfileUser(models.Model):
     
 
 class ProductCard(models.Model):
+    '''Модель карточки товара'''
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     name = models.CharField(max_length=120)
     description = models.TextField(max_length=1000)
@@ -34,3 +36,8 @@ class ProductCard(models.Model):
     photo = models.ImageField(upload_to='product/img/')
 
 
+    def __str__(self):
+        return self.name
+    
+    def return_absolute_url(self):
+        return reverse('prod_pk', kwargs={'pk':self.pk})

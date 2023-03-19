@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from .forms import *
@@ -9,6 +9,7 @@ from django.views.generic import ListView, CreateView
 
 
 class MainPage(ListView):
+    '''Отображение товаров на главной странице'''
     model = ProductCard
     template_name = 'Earth/main/index.html'
     context_object_name = 'products'
@@ -18,6 +19,11 @@ def show_profile(request):
     '''Тестовое отображение профиля'''
     return render(request,'Earth/main/home.html')
     
+
+def test_show_product(request, prod_id):
+    prod = get_object_or_404(ProductCard ,pk=prod_id)
+
+    return render(request, 'Earth/main/show_prod.html',{'product':prod})
 
 
 class UserCreated(FormView):

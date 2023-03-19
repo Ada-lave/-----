@@ -5,7 +5,8 @@ app_name = "Earth"
 
 urlpatterns = [
     path('profile', show_profile, name='profile'),
-    path('', MainPage.as_view())
+    path('', MainPage.as_view()),
+    path('product/<int:prod_id>',test_show_product, name='prod')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
