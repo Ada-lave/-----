@@ -48,8 +48,9 @@ header{
 }
 
 .MenuCell{
-    min-width: 54px;
-    margin-right: 145px;
+    color: black;
+    min-width: 185px;
+    margin-right: 40px;
 }
 
 .LongItemMenu{
@@ -57,6 +58,7 @@ header{
 }
 
 .UserAvatar{
+    margin-left: 5px;
     height: 100px;
     width: 70px;
     border-radius: 5%;
@@ -64,9 +66,10 @@ header{
 
 
 .UserName{
+    margin-top: 16px;
     font-size: 16px;
     text-align: center;
-    margin-top: 17px;
+   
 }
 
 .profile{
@@ -245,10 +248,11 @@ header{
 
 .Profile{
     margin-left: auto;
+    margin-right:25px;
 }
 
 .Rating{
-    margin-top: 10px;
+    
     margin-right: 31px
     
 }
@@ -256,9 +260,48 @@ header{
 
 .ProfileBlock{
     display: flex;
+   
+}
+
+
+.ProfileBlock{
+
+    
 }
 
 
 .UserImg{
 
+}
+
+
+.Rewiev{
+    margin-top: 10px;
+    margin-left: 26px;
+    color:#187800;
+}
+
+.Menu a {
+    color: black;
+}
+
+
+.MenuProfileImg{
+
+
+    margin-top: 16px;
+    height: 20px;
+    width: 20px;
+}
+
+.Menu{
+    display: flex;
+}
+
+.MenuCellFirst{
+    min-width: 91px;
+}
+
+.logo{
+    margin-right: 95px;
 }
