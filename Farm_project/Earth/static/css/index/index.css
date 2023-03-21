@@ -64,11 +64,7 @@ header{
 
 
 .UserName{
-    text-align: center;
-    margin-left: -83px;
-    margin-top: 25px;
-    width: 254px;
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .profile{
@@ -131,11 +127,8 @@ header{
     width: 20px;
 }
 
-.RatingUserList{
-    margin-left:-24px ;
-    height: 20px;
-    margin-top: 55px;
-    margin-right: -131px;
+.RatingList{
+    
     display: flex;
     list-style-type: none;
 }
@@ -248,11 +241,11 @@ header{
     width:304px ;
 }
 
-.hui{
-    margin-top: 10px;
-    background-color: red;
+.ProfileBlock{
+
+   
     height: 100px;
-    width: 265px;
+   
 }
 
 
