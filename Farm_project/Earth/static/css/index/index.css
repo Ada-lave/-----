@@ -175,7 +175,8 @@ header{
     height:59px;
     display: flex;
     justify-content: center;
-    
+    margin-bottom: 10px;
+
 }
 
 .SearchMain{
@@ -251,4 +252,17 @@ header{
 
 .Profile{
     margin-left: auto;
+}
+
+
+.WhySellText{
+    width: 800px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.TitleText{
+    text-align: justify;
+    font-size: 20px;
 }
