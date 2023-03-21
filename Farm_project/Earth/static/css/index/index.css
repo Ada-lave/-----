@@ -58,13 +58,15 @@ header{
 
 .UserAvatar{
     height: 100px;
-    width: 100px;
-    border-radius: 50%;
+    width: 70px;
+    border-radius: 5%;
 }
 
 
 .UserName{
     font-size: 16px;
+    text-align: center;
+    margin-top: 17px;
 }
 
 .profile{
@@ -82,15 +84,7 @@ header{
     height: 80px;
 }
 
-.UserImg{
-    margin-top: 25px;
-    margin-left: 65px;
-    margin-right: 69px;
-    width: 80px; 
-    height: 80px;
-    background: #83A7C9;
-    border-radius: 50%;
-}
+
 
 .RatingImg{
     height: 20px;
@@ -102,7 +96,7 @@ header{
     display: flex;
 
 }
-ы
+
 .Name{
     margin-right: -203px;
 }
@@ -251,4 +245,20 @@ header{
 
 .Profile{
     margin-left: auto;
+}
+
+.Rating{
+    margin-top: 10px;
+    margin-right: 31px
+    
+}
+
+
+.ProfileBlock{
+    display: flex;
+}
+
+
+.UserImg{
+
 }
