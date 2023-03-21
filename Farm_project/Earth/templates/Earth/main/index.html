@@ -24,9 +24,9 @@
     <section class="Menu">
             
         
-
+        <img class="logo" src="{% static 'img/logo.png'%}" alt="">
         <ul class="MenuList">
-            <li class="MenuCell"><a href="#">О нас</a></li>
+            <li class="MenuCellFirst"><a href="#">О нас</a></li>
             <li class="MenuCell"><a href="#">Правила продажи</a></li>
             <li class="MenuCell"><a href="#">Каталог продуктов</a></li>
             <li class="MenuCellLast"><a href="#">Контакты</a></li>
@@ -39,6 +39,12 @@
 
     <div class="Profile">
         <div class="ProfileBlock">
+
+
+            <div class="UserAvatar">
+                <img class="UserAvatar" src="{% static 'img/User.svg' %}" alt="">
+
+            </div>
 
 
             <div class="UserProfile">
@@ -56,14 +62,12 @@
                     </ul>
                 </div>
 
-
+                <div class="Rewiev">у вас нет отзывов</div>
             </div>
+            <div class="ProfileMenu"><img src="{% static  'img/ProfileUser.svg' %}" alt="" class="MenuProfileImg"></div>
 
 
-            <div class="UserAvatar">
-                <img src="" alt="">
-
-            </div>
+          
 
         </div>
     </div>
@@ -86,8 +90,11 @@
               Вы получаете клиента - клиент продукт</p>
 
 
+        
 
-    </span>
+
+    </section>
+
 
 
 
