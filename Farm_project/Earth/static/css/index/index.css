@@ -298,3 +298,7 @@ box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
     margin: auto;
     width: 871px;
 }
+
+.hide{
+    display: none;
+}
