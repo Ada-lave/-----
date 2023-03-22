@@ -280,6 +280,7 @@ box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
 }
 
 .SearchMain{
+       
         margin-top: 50px;
         width:862px; 
         display: flex;
@@ -291,8 +292,8 @@ box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
 
 .Search{
     
-    border-radius: 5px;
+    border-radius: 75px;
     height: 51px;
     margin: auto;
-    width: 800px;
+    width: 871px;
 }
