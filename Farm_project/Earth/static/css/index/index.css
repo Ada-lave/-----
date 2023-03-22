@@ -215,67 +215,8 @@ header{
 }
 
 .logo{
-    
-}
-
-
-.BanerImg{
-    border-radius: 5px;
-    margin-top: 15px;
-    margin-left: 15px;
-    height: 135px;
-    width: 168px;
-}
-
-.banner{
-    margin-top: -110px;
-    height: 318px;
-    font-size: 14px;
-    margin-left: 150px;
-    width: 196px;
-    background-color: azure
-}
-
-.banner h2{
-    margin-bottom: 5px;
-    font-size: 16px;
-    margin-left: 10px;
-}
-
-
-
-.BannerText{
-    margin-left: 12px;
-}
-
-.BannerSell{
-    margin-top: 10px;
-    margin-bottom: 5px;
-    margin-left: 41px;
-    width: 100px;
-    text-align: center;
-    background-color:#FFF855 ;
-}
-
-.BannerCity{
-    margin-left: 28px;
-    font-size: 12px;
-    width: 130px;
-    text-align: center;
-    background-color:#F1EECE;
-
-}
-
-.LinkBanner{
-    height: 30px;
-    margin-top: 10px;
-    text-align: center;
-    margin-left: 41px;
-    width: 101px;
-    background-color: aqua;
-}
-.linkBanner a{
-    margin-left: 10px;
+    margin-right: 95px;
+=========
 }
 
 
@@ -289,17 +230,5 @@ header{
 .TitleText{
     text-align: justify;
     font-size: 20px;
-}
-
-
-.WhySellText{
-    width: 800px;
-    text-align: center;
-    font-size: 20px;
-}
-
-
-.TitleText{
-    text-align: justify;
-    font-size: 20px;
+>>>>>>>>> Temporary merge branch 2
 }
