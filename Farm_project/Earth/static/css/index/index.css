@@ -19,15 +19,18 @@ body,html{
 
 body{
     font-family: 'Montserrat';
-    background-color: #E2F9A1;
+    
+   
+    
    
 }
 
 
 header{
-
+    background-color: #E2F9A1;
+    width: 100%;
     display: flex;
-    background-color: #F4FFD3;
+    align-items: center;
 }
 
 
@@ -40,6 +43,7 @@ header{
 
 
 .MenuList{
+   
     margin-top:40px;
     display: flex;
     justify-content: center;
@@ -62,11 +66,7 @@ header{
 
 
 
-header{
-    margin: auto;
-    width: 960px;
-   
-}
+
 
 .main_page{
     
@@ -78,24 +78,7 @@ header{
 
 
 
-.search{
-    width: 100%;
-    height:59px;
-    display: flex;
-    justify-content: center;
-    
-}
 
-.SearchMain{
-   
-    margin-top: 20px;
-    border:2px solid #069113;
-    width: 1200px;
-    height: 59px;
-    border-radius: 21px;
-   
-    
-}
 
 
 .CategoryProduct{
@@ -127,26 +110,31 @@ header{
 }
 
 .CardGrid{
-    margin-left: 86px;
+    
     display: flex;
     max-width: 1200px;
     flex-wrap: wrap;
 }
 
 .card{
+
+    background: #FFFF;
+    border-radius: 5px;
     
     margin-right: 74px;
     margin-top: 58px;
-    width: 217px;
+    width: 236px;
     height: 369px;
-    background-color: red;
     border-radius: 5px;
+    -webkit-box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
+box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
 }
 
 
 .CardImg{
     border-radius: 5px;
-    width:217px ;
+    width:236px ;
 }
 
 .ProfileBlock{
@@ -206,6 +194,8 @@ header{
 }
 
 .Menu{
+    width: 960px;
+    margin: auto;
     display: flex;
 }
 
@@ -214,6 +204,7 @@ header{
 }
 
 .logo{
+    margin-right: -37px;
     
 }
 
@@ -227,10 +218,10 @@ header{
 }
 
 .banner{
-    margin-top: -110px;
+    margin-top: -396px;
     height: 318px;
     font-size: 14px;
-    margin-left: 150px;
+    margin-left: -280px;
     width: 196px;
     background-color: azure
 }
@@ -275,4 +266,33 @@ header{
 }
 .linkBanner a{
     margin-left: 10px;
+}
+
+
+.WhySellH2{
+    font-size: 30px;
+    margin-left: 52px;
+}
+
+.WhySellText{
+    margin-left: 52px;
+    font-size: 25px;
+}
+
+.SearchMain{
+        margin-top: 50px;
+        width:862px; 
+        display: flex;
+        justify-content: center;
+        
+    
+
+}
+
+.Search{
+    
+    border-radius: 5px;
+    height: 51px;
+    margin: auto;
+    width: 800px;
 }
