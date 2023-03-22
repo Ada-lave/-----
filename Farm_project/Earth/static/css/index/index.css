@@ -25,6 +25,7 @@ body{
 
 
 header{
+
     display: flex;
     background-color: #F4FFD3;
 }
@@ -50,101 +51,11 @@ header{
 .MenuCell{
     color: black;
     min-width: 185px;
-    margin-right: 40px;
+    margin-right: 84px;
 }
 
 .LongItemMenu{
     min-width: 261px;
-}
-
-.UserAvatar{
-    margin-left: 5px;
-    height: 100px;
-    width: 70px;
-    border-radius: 5%;
-}
-
-
-.UserName{
-    margin-top: 16px;
-    font-size: 16px;
-    text-align: center;
-   
-}
-
-.profile{
-
-
-    margin-left: 110px;
-    display: flex;
-   
-}
-
-
-.LinkUser{
-    border-radius: 10%;
-    width: 80px;
-    height: 80px;
-}
-
-
-
-.RatingImg{
-    height: 20px;
-    width: 20px;
-}
-
-
-.RatingUser{
-    display: flex;
-
-}
-
-.Name{
-    margin-right: -203px;
-}
-
-
-
-
-
-.RatingUser{
-    height: 20px;
-}
-
-.RatingCell {
-    height: 20px;
-    margin-right: 5px;
-    width: 20px;
-}
-
-.RatingImg {
-    border-radius: 5%;
-    height: 20px;
-    width: 20px;
-}
-
-.RatingList{
-    
-    display: flex;
-    list-style-type: none;
-}
-
-
-
-.reviwes{
-    margin-top: 85px;
-    min-width: 150px;
-    margin-right: -242px;
-}
-
-.line{
-    margin-left:-116px;
-    margin-right: 20px;
-    margin-top: 110px;
-    height: 2px;
-    width: 351px;
-    background-color: #868686;
 }
 
 
@@ -153,13 +64,13 @@ header{
 
 header{
     margin: auto;
-    width: 1250px;
+    width: 960px;
    
 }
 
 .main_page{
     
-    width: 1250px;
+    width: 960px;
     height: 2000px;
     background-color: #FFFF;
     margin: auto;
@@ -224,10 +135,10 @@ header{
 
 .card{
     
-    margin-right: 84px;
+    margin-right: 74px;
     margin-top: 58px;
-    width: 304px;
-    height: 600px;
+    width: 217px;
+    height: 369px;
     background-color: red;
     border-radius: 5px;
 }
@@ -235,7 +146,7 @@ header{
 
 .CardImg{
     border-radius: 5px;
-    width:304px ;
+    width:217px ;
 }
 
 .ProfileBlock{
@@ -299,9 +210,69 @@ header{
 }
 
 .MenuCellFirst{
-    min-width: 91px;
+    min-width: 100px;
 }
 
 .logo{
-    margin-right: 95px;
+    
+}
+
+
+.BanerImg{
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 135px;
+    width: 168px;
+}
+
+.banner{
+    margin-top: -110px;
+    height: 318px;
+    font-size: 14px;
+    margin-left: 150px;
+    width: 196px;
+    background-color: azure
+}
+
+.banner h2{
+    margin-bottom: 5px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+
+
+.BannerText{
+    margin-left: 12px;
+}
+
+.BannerSell{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 41px;
+    width: 100px;
+    text-align: center;
+    background-color:#FFF855 ;
+}
+
+.BannerCity{
+    margin-left: 28px;
+    font-size: 12px;
+    width: 130px;
+    text-align: center;
+    background-color:#F1EECE;
+
+}
+
+.LinkBanner{
+    height: 30px;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 41px;
+    width: 101px;
+    background-color: aqua;
+}
+.linkBanner a{
+    margin-left: 10px;
 }
