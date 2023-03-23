@@ -23,10 +23,9 @@ class AddProductsForm(forms.ModelForm):
         model = ProductCard
         fields = ['name','description','category','photo','price']
 
-class PostForm(forms.ModelForm):
-    post = forms.CharField(max_length=120)
-
+class AddProductsOpenForm(forms.ModelForm):
+    '''Форма для добавления товара без привязки к пользователю через связи'''
     class Meta:
-        model = Post
-        fields = ('text',)
+        models = ProductCardOpen
+        fields = ['seller','name','description','category','photo','price']
 

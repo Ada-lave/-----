@@ -38,3 +38,12 @@ class ProductCard(models.Model):
 class Post(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE, related_name='post')
     text = models.CharField(max_length=120)
+
+class ProductCardOpen(models.Model):
+    '''Новая модель для добавления товара без ссылки на пользователя'''
+    seller = models.CharField(max_length=120)
+    name = models.CharField(max_length=120)
+    description = models.TextField(max_length=1000)
+    category = models.CharField(max_length=50)
+    price = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='Products/photo/')
