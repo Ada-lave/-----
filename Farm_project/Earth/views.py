@@ -48,13 +48,10 @@ class UserCreated(FormView):
 
 class AddProduct(CreateView):
     ''' Новая версия добовления продукта '''
-    model = ProductCard
-    form_class = AddProductsForm
+    model = OpenProductCard
+    form_class = AddProductsOpenForm
     template_name = 'Earth/form/getVeg.html'
     success_url = '/add'
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
 
 
 

@@ -41,3 +41,15 @@ class ProductCard(models.Model):
     
     def return_absolute_url(self):
         return reverse('prod_pk', kwargs={'pk':self.pk})
+    
+class OpenProductCard(models.Model):
+    name = models.CharField(max_length=120)
+    description = models.TextField(max_length=1000)
+    price = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='product/img/')
+    seller = models.CharField(max_length=120)
+    number_seller = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+

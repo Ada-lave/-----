@@ -25,3 +25,10 @@ class AddProductsForm(forms.ModelForm):
 
 
 
+class AddProductsOpenForm(forms.ModelForm):
+    class Meta:
+        model = OpenProductCard
+        fields = "__all__"
+        widgets = {
+            'name' : forms.TextInput(attrs={'class':'form-name'})
+        }
