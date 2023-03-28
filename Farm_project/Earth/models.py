@@ -25,16 +25,6 @@ class ProfileUser(models.Model):
     def return_absolute_url(self):
         return reverse("user_pk", kwargs={'pk':self.pk})
     
-
-class ProductCard(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
-    name = models.CharField(max_length=120)
-    description = models.TextField(max_length=1000)
-    category = models.CharField(max_length=50)
-    price = models.CharField(max_length=100)
-
-
-    
 class OpenProductCard(models.Model):
     name = models.CharField(max_length=120)
     description = models.TextField(max_length=1000)
@@ -45,4 +35,8 @@ class OpenProductCard(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+    
 

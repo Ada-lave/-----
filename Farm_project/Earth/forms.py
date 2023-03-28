@@ -21,7 +21,7 @@ class OpenAddProductsForm(forms.ModelForm):
     '''Форма для добавления овощей'''
     class Meta:
         model = OpenProductCard
-        fields = ['name','description','category','price']
+        fields = '__all__'
 
 
 

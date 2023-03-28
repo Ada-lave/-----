@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Earth',
+    'rest_framework'
     
 
 ]
@@ -85,7 +86,7 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': 'Alpha_cat'
+        'PASSWORD': 'Фдзрф_сфе'
     }
 }
 

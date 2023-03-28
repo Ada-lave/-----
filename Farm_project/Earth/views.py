@@ -3,14 +3,20 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from .forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import ProfileUser, ProductCard
+from .models import *
 from django.views.generic.edit import FormView
 from django.views.generic import ListView, CreateView
+from rest_framework import generics
+from .serializers import *
+
+class ApiOpenCard(generics.ListAPIView):
+    queryset = OpenProductCard.objects.all()
+    serializer_class = TestApi
 
 
 class MainPage(ListView):
     '''Отображение товаров на главной странице'''
-    model = ProductCard
+    model = OpenProductCard
     template_name = 'Earth/main/index.html'
     context_object_name = 'products'
 
@@ -21,7 +27,7 @@ def show_profile(request):
     
 
 def test_show_product(request, prod_id):
-    prod = get_object_or_404(ProductCard ,pk=prod_id)
+    prod = get_object_or_404(OpenProductCard ,pk=prod_id)
 
     return render(request, 'Earth/main/show_prod.html',{'product':prod})
 
