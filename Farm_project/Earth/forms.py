@@ -15,17 +15,13 @@ class SigUpForm(UserCreationForm):
     
     class Meta:
         model = User
-        fields = ('username','first_name','last_name','age','number_phone','adress','email','password1','password2')
+        fields = ['username','first_name','last_name','age','number_phone','adress','email','password1','password2']
 
-class AddProductsForm(forms.ModelForm):
+class OpenAddProductsForm(forms.ModelForm):
     '''Форма для добавления овощей'''
     class Meta:
-        model = ProductCard
-        fields = ['name','description','category','photo','price']
+        model = OpenProductCard
+        fields = ['name','description','category','price']
 
-class AddProductsOpenForm(forms.ModelForm):
-    '''Форма для добавления товара без привязки к пользователю через связи'''
-    class Meta:
-        models = ProductCardOpen
-        fields = ['seller','name','description','category','photo','price']
+
 

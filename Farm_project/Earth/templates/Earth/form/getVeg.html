@@ -1,24 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/form/FormAddStyle.css' %} " rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" enctype=multipart/form-data>
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {% for field in form %}
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-            <p>{{ field.help_text }}</p>
-            {% endif %}
-            {% for error in field.errors %}
-        <p>{{ error }}</p>
-        {% endfor %}
-        {% endfor %}
+        {{ form.as_p }}
         <button type="submit">Добавить</button>
     </form>
 </body>

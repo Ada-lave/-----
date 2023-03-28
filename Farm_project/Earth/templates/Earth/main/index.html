@@ -1,14 +1,162 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Document</title>
+    <link href="{% static 'css/index/index.css' %} " rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <!-- стили -->
+    <title>FreshRefresh</title>
 </head>
 <body>
+
+<!-- структура сайта -->
+
+<header>
+
+    <!-- меню -->
+
+    <section class="MainMenu">
+        <!-- главный родитель меню -->
+            <ul class="MenuList">
+                <!-- список меню -->
+                    <li class="ItemMenu">Кто мы такие?</li>
+                    <li class="ItemMenu LongItemMenu">Что у нас можно продавать</li>
+                    <li class="ItemMenu LongItemMenu">Что у нас можно купить</li>
+                    <li class="ItemMenu">Правила</li>
+                    <!-- ячейки меню -->
+            </ul>
+
+
+            <section class="profile">
+                
+                
+                
+                   
+                         
+                            <div class="UserImg">
+                                <a class="LinkUser" href="#"><img class="LinkUser" src="{% static 'img/User.svg' %}" alt=""></a>
+                            </div>
+                         
+                           
+                        
+                   
+
+               
+                <!-- фото пользователя -->
+
+
+                <div class="Name">
+                    {% if not user.is_authenticated %}
+                        <p class="UserName" >Войти в аккаунт</p>
+                            <!-- имя пользователя в профиле -->
+                    {% else %}
+                        <p class="UserName"> {{ user.first_name }} </p>
+                    {% endif %}
+                </div>
+                
+                <!-- рейтинг пользователя -->
+
+                <div class="RatingUser">
+
+                    <ul class="RatingUserList">
+                            
+                        <li class="RatingCell"><img class="RatingImg" src="{% static 'img/RatingStart.svg' %}" alt=""></li>
+                        <li class="RatingCell"><img class="RatingImg" src="{% static 'img/RatingStart.svg' %}" alt=""></li>
+                        <li class="RatingCell"><img class="RatingImg" src="{% static 'img/RatingStart.svg' %}" alt=""></li>
+                        <li class="RatingCell"><img class="RatingImg" src="{% static 'img/RatingStart.svg' %}" alt=""></li>
+                        <li class="RatingCell"><img class="RatingImg" src="{% static 'img/RatingStart.svg' %}" alt=""></li>
+                        
+                    </ul>
+
+                    <p class="reviwes">У вас нет отзывов</p>
+
+                   
+
+                </div>
+                <div class="line"> </div>
+            </section>
+            
+
+    </section>
+
+
+
+</header>
+
+
+<section class="main_page">
+
+    <section class="search">
+
+        <div class="SearchMain">
+               <div class="CategoryProduct">
+
+                    <select class="CategoryProductList" name="Category" id="">
+                        <option value=”GR”>Овощи</option>
+
+                        <option value=”YE”>Ягоды</option>
+                        
+                        <option value=”BL”>Фрукты</option>
+                    
+                    </select>
+                <div class="LineSearch">
+                    &nbsp
+                </div>
+               </div>
+
+
+
+               
+        </div>
+
+
+
+        
+
+
+    </section>
+
+
+
+    
+    <section class="Catalog">
+
+        <div class="CardGrid">
+            {% for product in products %}
+            <div class="card">
+            
+                <img class="CardImg" src="{{ product.photo.url }}" alt="">
+                <p> {{ product.name }} </p>
+                <p>{{ product.user.first_name }}</p>
+                <p>Категория: {{ product.category }}</p>
+                <p>Описание :{{ product.description }}</p>
+                <p>Цена: {{ product.price }}</p>
+                <a href="{% url 'Earth:prod' product.pk %}">Подробнее</a>
+
+            </div> 
+            {% endfor %}
+            
+    
+        </div>
+
+    </section>
+
+</section>
+
+
+
+
+
+   
+
+
+    <!-- скрипт -->
+    <!-- <script src ="{% static 'scripts/index/script.js' %} " type="text/javascript"> </script> -->
     
 </body>
 </html>

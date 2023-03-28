@@ -10,6 +10,7 @@ from django.urls import reverse
 
 
 class ProfileUser(models.Model):
+    '''Модель с доп параметрами юзера'''
     user = models.OneToOneField(User, on_delete=models.CASCADE,default=1)
     first_name = models.CharField(max_length=120)
     last_name = models.CharField(max_length=200)
@@ -31,19 +32,17 @@ class ProductCard(models.Model):
     description = models.TextField(max_length=1000)
     category = models.CharField(max_length=50)
     price = models.CharField(max_length=100)
-    photo = models.ImageField(upload_to='Products/photo/')
 
 
     
-class Post(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE, related_name='post')
-    text = models.CharField(max_length=120)
-
-class ProductCardOpen(models.Model):
-    '''Новая модель для добавления товара без ссылки на пользователя'''
-    seller = models.CharField(max_length=120)
+class OpenProductCard(models.Model):
     name = models.CharField(max_length=120)
     description = models.TextField(max_length=1000)
-    category = models.CharField(max_length=50)
     price = models.CharField(max_length=100)
-    photo = models.ImageField(upload_to='Products/photo/')
+    photo = models.ImageField(upload_to='product/img/')
+    seller = models.CharField(max_length=120)
+    number_seller = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
