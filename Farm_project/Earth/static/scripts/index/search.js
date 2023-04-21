@@ -10,7 +10,7 @@ document.querySelector("#elastic").oninput = function(){
 
 
     CardItems.forEach(function(elem){
-        if (elem.innerText.search(val) == -1){
+        if (elem.innerText.search(RegExp(val,"gi")) == -1){
             elem.classList.add('hide');
         }
         else{
