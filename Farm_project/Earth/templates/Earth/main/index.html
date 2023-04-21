@@ -14,10 +14,46 @@
     <!-- стили -->
     <title>FreshRefresh</title>
 </head>
+
+
+<div class="overlay">
+
+</div>
+
+
+
+<div class="UserAgreement">
+
+   <div class="window">
+
+    <img class="warning_img" src="{% static 'img/warning.jpg' %}" alt="">
+
+    <p class="TextAgreement" >
+        Прежде чем воспользоваться нашей площадкой, 
+        в целях безопасноти Ваших личных данных 
+        мы просим Вас ознакомиться с Правилами 
+        пользовательского соглашения и нашей Политикой конфиденциальности.
+    </p>
+
+    <div class="LinkDocument">
+
+        <a  href="#"><img class="DocumentImg" src= "{% static 'img/document.png' %}" alt=""></a>
+        <a href="#"><p class="LinkText">Ссылка на документ</p></a>
+
+    </div>
+
+    <button class="BtnAgreement" >С правилами ознакомлен</button>
+    
+    
+
+   </div>
+</div>
+
+
+
 <body>
 
 <!-- структура сайта -->
-
 
 
 
@@ -61,12 +97,136 @@
 
 
     
+
+    <div class="SecBlockMain">
+
+
+        <div class="SecondBlock">
+  
+            <h2 class="WhySellH2">Что у нас можно продавать?</h2>
+    
+                <p class="WhySellText">На нашей площадке вы можете продавать свои продукты.
+                 Разрешены различные овощи, фрукты
+                Мы не являемся поставщиками на прямую. В сделке мы выступаем в роле посредника.
+                  Вы получаете клиента - клиент продукт</p>
+    
+    
+                
+    
+            
+    
+        </div>
+    
+
+
+
+
+
+
+
+        <div class="GridSecondBlock">
+
+            <div class="SecondBlock FirstCard ">  <div class="front">
+
+               <div class="imgcard"> </div>
+
+            </div>
+
+            <div class="back">я работаю</div>
+            
+        </div>
+            <div class="SecondBlock SecondCard ">
+
+                <div class="front">
+
+                    <div class="imgcard2"> </div>
+
+                </div>
+
+
+            <div class="back">я работаю</div>
+
+            </div>
+            <div class="SecondBlock ThirdCard">
+
+                <div class="front">
+
+                    <div class="imgcard3"> </div>
+
+                </div>
+            <div class="back">
+                <span>я работаю</span>
+            </div>
+
+            </div>
+            
+
+
+        </div>  
+
+            <div class="test">
+
+
+                <div class="GridPbText">
+
+
+                    <div class="vegetables">
+                        Овощи
+                    </div>
+                    <div class="vegetables">
+                        фрукты
+                    </div>
+                    <div class="vegetables">
+                        Животные продукты
+                    </div>
+    
+                    
+    
+    
+                </div>
+
+            </div>
+            
+            
+       <div class="GridPBlock">
+           
+           
+       </div>
+
+
+
+       <div class="addCard"><div class="addCardParrent"><div class="LinkAdd">
+        <a  class="addCardBtn" href="#">Разместить свой товар</a> 
+    </div></div></div>
+        
+
+
+    </div>
+
+
+
+
+    <div class="ProductText">Каталог</div>
+
+
+
+
     <div class="SearchMain">
 
         <input class="Search" type="text" id="elastic">
+        <label class="imgSearch" for=""><img class="imgSearch" src="{% static 'img/search.svg'%}" alt=""></label>
 
     </div>
-        
+
+
+
+
+    
+
+   
+
+
+    
 
       <section class="Catalog">
 
@@ -74,8 +234,10 @@
             {% for product in products %}
             <div class="card">
             
+
+
                 <img class="CardImg" src="{{ product.photo.url }}" alt="">
-                <p> {{ product.name }} </p>
+                <p class="NameProduct"> {{ product.name }} </p>
                 <p>{{ product.user.first_name }}</p>
                 <p>Категория: {{ product.category }}</p>
                 <p>Описание :{{ product.description }}</p>
@@ -88,54 +250,69 @@
     
         </div>
 
+        <div class="LastBlock"><h2 class="WhySellH2">Что у нас можно купить?</h2>
+    
+            <p class="WhySellText">Мы были созданы для того что бы частные предприниматели 
+                могли продавать экологически чистый продукт обычным людям
+                в удобной форме.</p>
+            </div>
+
     </section>
 
-    <span>
-  
-        <h2 class="WhySellH2">Что у нас можно продавать?</h2>
+</section> 
 
-            <p class="WhySellText">На нашей площадке вы можете продавать свои продукты.
-             Разрешены различные овощи, фрукты
-            Мы не являемся поставщиками на прямую. В сделке мы выступаем в роле посредника.
-              Вы получаете клиента - клиент продукт</p>
+    <footer>
+        <div class="FooterMenu">
+
+
+            <div class="contact">
+
+                <p class="contactText">По всем вопросам сюда</p>
+
+                <div class="vk">
+
+                    <a href="https://vk.com/public220048510 "><img class="VkIcon" src="{% static 'img/vk.svg'%}"  alt=""> 
+                    <p cl  ass="vklink">https://vk.com/public220048510</p>
+                    </a>
+                    
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </footer>
+    
+
+
+
+    
+
+    
+
+
 
 
         
 
-    </span>
-
-
-
-
-
-        
-
-    
     
 
 
 
 
 
-   
-<div class="banner">
 
-    <h2>Продай свой урожай</h2>
-    <div class="BannerText">
-        Первая площадка по продаже сельхозтовара!
-    </div>
-    <img class="BanerImg" src="{% static 'img/potato.jpg' %}" alt="">
-    <p class="BannerSell">80рублей/кг</p>
-    <p class="BannerCity">Город:Екатеринбург</p>
-    <div class="LinkBanner"><a href="">Продать!</a> </div>
-    
-    
-    
     </div>
 
-  
+    <script src ="{% static 'scripts/index/UserAgreement.js' %} " type="text/javascript"> </script>
     <script src ="{% static 'scripts/index/search.js' %} " type="text/javascript"> </script>
     
+    
+
+
+
+
 </body>
 
 </html>
