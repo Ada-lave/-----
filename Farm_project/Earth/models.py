@@ -25,23 +25,6 @@ class ProfileUser(models.Model):
     def return_absolute_url(self):
         return reverse("user_pk", kwargs={'pk':self.pk})
     
-
-class ProductCard(models.Model):
-    '''Модель карточки товара'''
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
-    name = models.CharField(max_length=120)
-    description = models.TextField(max_length=1000)
-    category = models.CharField(max_length=50)
-    price = models.CharField(max_length=100)
-    photo = models.ImageField(upload_to='product/img/')
-
-
-    def __str__(self):
-        return self.name
-    
-    def return_absolute_url(self):
-        return reverse('prod_pk', kwargs={'pk':self.pk})
-    
 class OpenProductCard(models.Model):
     name = models.CharField(max_length=120)
     description = models.TextField(max_length=1000)
@@ -52,4 +35,8 @@ class OpenProductCard(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+    
 

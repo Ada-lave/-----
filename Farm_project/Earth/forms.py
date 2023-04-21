@@ -17,18 +17,11 @@ class SigUpForm(UserCreationForm):
         model = User
         fields = ['username','first_name','last_name','age','number_phone','adress','email','password1','password2']
 
-class AddProductsForm(forms.ModelForm):
+class OpenAddProductsForm(forms.ModelForm):
     '''Форма для добавления овощей'''
     class Meta:
-        model = ProductCard
-        fields = ['name','description','category','price','photo']
-
-
-
-class AddProductsOpenForm(forms.ModelForm):
-    class Meta:
         model = OpenProductCard
-        fields = "__all__"
-        widgets = {
-            'name' : forms.TextInput(attrs={'class':'form-name'})
-        }
+        fields = '__all__'
+
+
+
