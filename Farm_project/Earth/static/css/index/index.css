@@ -229,37 +229,7 @@ header{
 
 
 
-.Catalog{
-   
-}
 
-.CardGrid{
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(3,240px);
-    column-gap: 123px;
-    row-gap: 40px;
-
-
-}
-
-.card{
-
-    background: #FFFF;
-    border-radius: 5px;
-    width: 236px;
-    height: 430px;
-    border-radius: 5px;
-    -webkit-box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
--moz-box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
-box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
-}
-
-
-.CardImg{
-    border-radius: 5px;
-    width:236px ;
-}
 
 .ProfileBlock{
 
