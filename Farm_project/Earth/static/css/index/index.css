@@ -1,4 +1,121 @@
 
+{% load static %}
+
+.BtnAgreement{
+   font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 319px;
+    margin-left: 63px;
+    border:none;
+    height: 65px;
+    background-color: #FCFF72;
+    margin-top: 10px;
+}
+
+
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.active{
+    visibility: visible;
+}
+
+.LinkText{
+    margin-top: 9px;
+    font-size: 24px;
+}
+
+.LinkDocument{
+    color: #29B5D3;
+    margin-top: 28px;
+    margin-left:66px;
+    display: flex;
+}
+
+
+
+.LinkDocument a{
+    margin-right:10px ;
+    color: #29B5D3;
+
+}
+
+
+.DocumentImg{
+    width: 40px;
+    height: 43px;
+}
+
+.TextAgreement{
+    text-align: center;
+    font-size: 18px;
+    color: #664747;
+}
+.window{
+}
+.warning_img{
+    margin-left: 29px;
+    margin-top: 6px;
+    height: 250px;
+    width: 373px;
+}
+
+.overlay{
+    transition: .3s all;
+    opacity: 50;
+    visibility: hidden;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 20;
+    
+
+}
+
+
+
+
+.UserAgreement{
+    transition: all .3s ease ;
+    display: block;
+    visibility: hidden;
+    margin-left: -30px;
+    left: 50%;
+    border-radius:5% ;
+    background-color: white;
+    width: 100%;
+    max-width: 429px;
+    height: 580px;
+    position: fixed;
+   top: 50%;
+   
+   transform: translate(-50%, -50%);
+   z-index: 30;
+
+
+}
+
+
+
+
+.OverlayText{
+    
+}
+
+
+
+.DocumentImg{
+    fill: #29B5D3;
+}
+
 *{
 
     margin: 0;
@@ -42,6 +159,16 @@ header{
 }
 
 
+
+
+.BackgroundAgreement{
+    
+   
+    
+}
+
+
+
 .MenuList{
    
     margin-top:40px;
@@ -69,9 +196,7 @@ header{
 
 
 .main_page{
-    
     width: 960px;
-    height: 2000px;
     background-color: #FFFF;
     margin: auto;
 }
@@ -104,38 +229,7 @@ header{
 
 
 
-.Catalog{
-   display: flex;
-   justify-content: center; 
-}
 
-.CardGrid{
-    
-    display: flex;
-    max-width: 1200px;
-    flex-wrap: wrap;
-}
-
-.card{
-
-    background: #FFFF;
-    border-radius: 5px;
-    
-    margin-right: 74px;
-    margin-top: 58px;
-    width: 236px;
-    height: 369px;
-    border-radius: 5px;
-    -webkit-box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
--moz-box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
-box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
-}
-
-
-.CardImg{
-    border-radius: 5px;
-    width:236px ;
-}
 
 .ProfileBlock{
 
@@ -270,19 +364,18 @@ box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
 
 
 .WhySellH2{
-    font-size: 30px;
-    margin-left: 52px;
+    font-size: 35px;
 }
 
 .WhySellText{
-    margin-left: 52px;
+    margin-top: 30px;
     font-size: 25px;
 }
 
 .SearchMain{
        
         margin-top: 50px;
-        width:862px; 
+        width:960px; 
         display: flex;
         justify-content: center;
         
@@ -291,14 +384,352 @@ box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
 }
 
 .Search{
+    background-color: #FBFBFB;
+    border: solid #E9E9E9 2px;
+    border-radius: 23px;
     text-align: center;
     font-size: 22px;
-    border-radius: 70px;
-    height: 51px;
+    height: 33px;
     margin: auto;
     width: 871px;
+
 }
 
 .hide{
     display: none;
 }
+
+.NameProduct{
+    
+}
+
+
+
+.warning{
+    color: red;
+   font-size: 23px;
+    text-align: center;
+    margin-top: 33px;
+}
+
+
+
+.SecondBlock{
+    margin-top: 50px;
+    margin-right: 10px;
+}
+
+.GridSecondBlock{
+    display: grid;
+    grid-template-columns: repeat(3,236px);
+    column-gap: 123px;
+    row-gap: 40px;
+}
+
+.FirstCard{
+    position: relative;
+    cursor: pointer;
+    margin-right: auto;
+    border-radius: 29px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 231px;
+    height: 336px;
+}
+
+
+.front, .back{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    backface-visibility:hidden;
+}
+
+
+.front{
+    background-color: white;
+}
+.imgcard{
+    border-radius: 25px;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+   background-image: url('/static/img/potato.jpeg') ;
+}
+.imgcard2{
+    border-radius: 25px;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+   background-image: url('/static/img/berris.jpeg') ;
+}
+.imgcard3{
+    border-radius: 25px;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+   background-image: url('/static/img/chiken.jpeg') ;
+}
+
+
+
+.back{
+    border-radius: 25px;
+    transform: rotateY(180deg);
+    -webkit-box-shadow: 0px 5px 42px -5px rgba(34, 60, 80, 0.45);
+    -moz-box-shadow: 0px 5px 42px -5px rgba(34, 60, 80, 0.45);
+    box-shadow: 0px 5px 42px -5px rgba(34, 60, 80, 0.45);
+}
+
+.SecondBlock{
+    
+}
+
+
+.FirstCard:hover .front{
+
+    transform: rotateY(180deg);
+
+}
+.FirstCard:hover .back{
+
+    transform: rotateY(360deg);
+
+}
+
+
+
+.SecondCard:hover .front{
+
+    transform: rotateY(180deg);
+
+}
+.SecondCard:hover .back{
+
+    transform: rotateY(360deg);
+
+}
+.ThirdCard:hover .front{
+
+    transform: rotateY(180deg);
+
+}
+.ThirdCard:hover .back{
+
+    transform: rotateY(360deg);
+
+}
+
+
+
+
+.card
+
+.GridPBlock{
+    display: flex;
+}
+
+
+
+.ovoshi{
+    margin-right: 285px;
+}
+.ovoshi1{
+    margin-right: 210px;
+    margin-left: 87px;
+}
+.ovoshi2{
+    margin-right: 245px;
+    margin-left: 38px;
+}
+
+
+
+.SecondCard {
+    position: relative;
+    cursor: pointer;
+    margin-right: auto;
+    border-radius: 29px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 231px;
+    height: 336px;
+  
+}
+
+.ThirdCard{
+    position: relative;
+    cursor: pointer;
+    margin-left: auto;
+    border-radius: 29px;
+    width: 231px;
+    height: 336px;
+}
+
+.addCard{
+    width: 390px;
+    transition: transform 0.25s;
+    display: flex;
+    justify-content: center;
+}
+
+
+.addCard:hover{
+    
+    transform: scale(1.05);
+}
+
+.addCardParrent{
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top:35px;
+    width: 390px;
+    height: 40px;
+    text-align: center;
+    background-color: #BFFF8C;
+   
+}
+
+.LinkAdd{
+
+    margin-top: 10px;
+
+
+}
+
+.addCardBtn{
+    color: black;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.LastBlock{
+    margin-bottom: 49px;
+    margin-top: 40px;
+}
+
+.ProductText{
+    font-size: 40px;
+    margin-top: 65px;
+    text-align: center;
+    width: 960px;
+}
+
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: #626262;
+}
+
+
+.GridPbText{
+    margin-top: 10px;
+    margin-left: 72px;
+    display: grid;
+    grid-template-columns: repeat(3,236px);
+    column-gap: 123px;
+}
+
+
+.vegetables{
+    font-size: 18px;
+    width: 80px;
+}
+
+
+.imgSearch{
+   
+    margin-top: 2px;
+    margin-left: 262px;
+    width: 80px;
+    height: 30px;
+    position: absolute;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+.FooterMenu{
+    color: white;
+    width: 960px;
+}
+
+.VkIcon{
+    width: 60px;
+    height: 60px;
+
+}
+
+.vklink{
+    display: flex;
+}
+
+.vklinktext{
+    margin-top: 16px;
+    color: white;
+    font-size: 25px;
+}
+
+.maillink{
+    display: flex;
+}
+.maillinktext{
+    margin-top: 16px;
+    color: white;
+    font-size: 25px;
+}
+
+.mailIcon{
+    width: 50px;
+    height: 60px;
+
+}
+.mail{
+
+    margin-left: 55px;
+
+}
+
+.contactFooter{
+
+    margin-top: 70px;
+    display: flex;
+
+}
+
+
+.addProduct{
+
+
+width: 960px;
+display: flex;
+justify-content: center;
+
+}
+
+
+@media (max-width: 1280px) {
+    
+
+    .Search{
+        border: solid #989898 2px;
+        border-radius: 23px;
+        text-align: center;
+        font-size: 22px;
+        height: 33px;
+        margin: auto;
+        width: 871px;
+    
+    }
+
+
+
+  }
