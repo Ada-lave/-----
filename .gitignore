@@ -17,3 +17,10 @@ Farm_project/Earth/migrations
 Farm_project/Earth/__pycache__/
 Farm_project/Earth/migrations/__pycache__/
 >>>>>>> frontendD
+Farm_project/Earth/__pycache__/admin.cpython-310.pyc
+Farm_project/Earth/__pycache__/forms.cpython-310.pyc
+Farm_project/Earth/__pycache__/models.cpython-310.pyc
+Farm_project/Earth/__pycache__/urls.cpython-310.pyc
+Farm_project/Earth/__pycache__/views.cpython-310.pyc
+Farm_project/Farm/__pycache__/settings.cpython-310.pyc
+Farm_project/Farm/__pycache__/urls.cpython-310.pyc
