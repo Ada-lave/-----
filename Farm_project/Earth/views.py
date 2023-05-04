@@ -1,17 +1,26 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.decorators import login_required
 from .forms import *
-from django.contrib.auth.mixins import LoginRequiredMixin
+from rest_framework.response import Response
 from .models import *
 from django.views.generic.edit import FormView
 from django.views.generic import ListView, CreateView
-from rest_framework import generics
 from .serializers import *
+from rest_framework.decorators import api_view
 
-class ApiOpenCard(generics.ListAPIView):
-    queryset = OpenProductCard.objects.all()
-    serializer_class = TestApi
+#API
+@api_view(['GET'])
+def APIAllProducts(request):
+    if request.method == "GET":
+        products = OpenProductCard.objects.all()
+        serializer = GetProductsSerializer(products, many=True)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+def APIProduct(request,pk):
+    if request.method == "GET":
+        products = OpenProductCard.objects.get(pk=pk)
+        serializer = GetProductsSerializer(products)
+        return Response(serializer.data)
 
 
 class MainPage(ListView):
@@ -20,10 +29,7 @@ class MainPage(ListView):
     template_name = 'Earth/main/index.html'
     context_object_name = 'products'
 
-@login_required
-def show_profile(request):
-    '''Тестовое отображение профиля'''
-    return render(request,'Earth/main/home.html')
+
     
 
 def test_show_product(request, prod_id):
