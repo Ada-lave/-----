@@ -1,15 +1,22 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from .forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import ProfileUser, ProductCard
+from .models import *
 from django.views.generic.edit import FormView
 from django.views.generic import ListView, CreateView
+from rest_framework import generics
+from .serializers import *
+
+class ApiOpenCard(generics.ListAPIView):
+    queryset = OpenProductCard.objects.all()
+    serializer_class = TestApi
 
 
 class MainPage(ListView):
-    model = ProductCard
+    '''Отображение товаров на главной странице'''
+    model = OpenProductCard
     template_name = 'Earth/main/index.html'
     context_object_name = 'products'
 
@@ -18,6 +25,11 @@ def show_profile(request):
     '''Тестовое отображение профиля'''
     return render(request,'Earth/main/home.html')
     
+
+def test_show_product(request, prod_id):
+    prod = get_object_or_404(OpenProductCard ,pk=prod_id)
+
+    return render(request, 'Earth/main/show_prod.html',{'product':prod})
 
 
 class UserCreated(FormView):
@@ -42,33 +54,8 @@ class UserCreated(FormView):
 
 class AddProduct(CreateView):
     ''' Новая версия добовления продукта '''
-    model = ProductCard
-    form_class = AddProductsForm
+    model = OpenProductCard
+    form_class = OpenAddProductsForm
     template_name = 'Earth/form/getVeg.html'
-    success_url = '/add'
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
-
-
-
-
     
-''' Старая версия добавления продукта '''
-# def AddProducts(request):
-#     form = AddProductsForm(request.POST,request.FILES)
-#     if request.method == 'POST':
-#         if form.is_valid():
-#             product = form.save(commit=False)
-#             product.user = request.user
-#             product.photo = form.cleaned_data.get('photo')
-#             product.name = form.cleaned_data.get('name')
-#             product.description = form.cleaned_data.get('description')
-#             product.price = form.cleaned_data.get('price')
-#             product.category =  form.cleaned_data.get('category')
-#             product.save()
-#     else:
-#         form = AddProductsForm()    
-    
-#     return render(request, 'Earth/form/getVeg.html', {"form":form})
-            
+

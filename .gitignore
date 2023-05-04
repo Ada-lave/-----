@@ -10,5 +10,10 @@ Farm_project/Earth/__pycache__/models.cpython-311.pyc
 Farm_project/Earth/__pycache__/forms.cpython-311.pyc
 Farm_project/Earth/__pycache__/models.cpython-311.pyc
 Farm_project/Earth/__pycache__/models.cpython-310.pyc
+<<<<<<< HEAD
+Farm_project/Earth/__pycache__
+Farm_project/Earth/migrations
+=======
 Farm_project/Earth/__pycache__/
 Farm_project/Earth/migrations/__pycache__/
+>>>>>>> frontendD

@@ -256,7 +256,7 @@
                 <p>Категория: {{ product.category }}</p>
                 <p>Описание :{{ product.description }}</p>
                 <p>Цена: {{ product.price }}</p>
-                <button>Подробнее</button>
+                <a href="{% url 'Earth:prod' product.pk %}">Подробнее</a>
 
             </div> 
             {% endfor %}
