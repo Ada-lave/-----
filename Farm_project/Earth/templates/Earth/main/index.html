@@ -251,12 +251,42 @@
 
 
                 <img class="CardImg" src="{{ product.photo.url }}" alt="">
-                <p class="NameProduct"> {{ product.name }} </p>
-                <p>{{ product.user.first_name }}</p>
-                <p>Категория: {{ product.category }}</p>
-                <p>Описание :{{ product.description }}</p>
-                <p>Цена: {{ product.price }}</p>
-                <button>Подробнее</button>
+                <div class="name_product">
+
+                    <p class="NameProduct"> {{ product.name }} </p>
+
+                </div>
+
+               
+                
+                <div class="description_product">
+
+                    <p>Описание самых лучших овощей и так далее</p>
+
+                </div>
+
+
+
+
+                <div class="product_price">
+
+                    <p> {{ product.price }}</p>
+                </div>
+
+
+                <div class="detailed">
+
+                    <button class="detailed_btn">Подробнее</button>
+
+
+                </div>
+
+                <div class="time_card">
+
+                    <button class="detailed_btn">Подробнее</button>
+
+
+                </div>
 
             </div> 
             {% endfor %}

@@ -28,4 +28,49 @@ box-shadow: 1px 4px 8px 6px rgba(34, 60, 80, 0.2);
 .CardImg{
     border-radius: 5px;
     width:236px ;
+    height: 157px;
+}
+
+.name_product{
+margin-top: 16px;
+font-size: 18px;
+display: flex;
+justify-content: center;
+font-weight: bold; 
+}
+
+.detailed{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.detailed_btn{
+    background-color: #FFE900;
+    font-family:'Montserrat';
+    border: none;
+    width: 200px;
+    height: 45px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.product_price{
+    font-size: 20px;
+    display: flex;
+    justify-content:center;
+    color: #4C8E18;
+    font-weight: bold;
+
+
+}
+
+.description_product{
+    font-size: 17px;
+    margin-top: 10px;
+    text-align: center;
+    min-height: 70px;
+    max-height: 70px;
+    max-width: 230px;
+
 }
