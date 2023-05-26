@@ -1,0 +1,364 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/index/index.css' %} " rel="stylesheet">
+    <link href="{% static 'css/index/Catalog.css' %} " rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+
+    <!-- стили -->
+    <title>Доска объявлений для фермеров «EarthMarket»</title>
+</head>
+
+
+<div class="overlay">
+
+</div>
+
+
+
+<div class="UserAgreement">
+
+   <div class="window">
+
+    <img class="warning_img" src="{% static 'img/warning.jpg' %}" alt="">
+
+    <p class="TextAgreement" >
+        Прежде чем воспользоваться нашей площадкой, 
+        в целях безопасноти Ваших личных данных 
+        мы просим Вас ознакомиться с Правилами 
+        пользовательского соглашения и нашей Политикой конфиденциальности.
+    </p>
+
+    <div class="LinkDocument">
+
+        <a  href="#"><img class="DocumentImg" src= "{% static 'img/document.png' %}" alt=""></a>
+        <a href="#"><p class="LinkText">Ссылка на документ</p></a>
+
+    </div>
+
+    <button class="BtnAgreement" >С правилами ознакомлен</button>
+    
+    
+
+   </div>
+</div>
+
+
+
+<body>
+
+<!-- структура сайта -->
+
+
+
+
+<header>
+
+
+  
+
+    <section class="Menu">
+          
+        <img class="logo" src="{% static 'img/logo.png'%}" alt="">
+        <ul class="MenuList">
+            <li class="MenuCellFirst"><a href="#">О нас</a></li>
+            <li class="MenuCell"><a href="#">Правила продажи</a></li>
+            <li class="MenuCell"><a href="#">Каталог продуктов</a></li>
+            <li class="MenuCellLast"><a href="#">Контакты</a></li>
+            
+            
+        </ul>
+
+        
+       
+
+    </section>
+
+   
+
+  
+
+</header>
+
+
+<!-- he -->
+
+
+
+
+
+<section class="main_page">
+
+
+    
+
+    <div class="SecBlockMain">
+
+
+        <div class="SecondBlock">
+  
+            <h2 class="WhySellH2">Что у нас можно продавать?</h2>
+    
+                <p class="WhySellText">На нашей площадке вы можете продавать свои продукты.
+                 Разрешены различные овощи, фрукты
+                Мы не являемся поставщиками на прямую. В сделке мы выступаем в роле посредника.
+                  Вы получаете клиента - клиент продукт</p>
+    
+    
+                
+    
+            
+    
+        </div>
+    
+
+
+
+
+
+
+
+        <div class="GridSecondBlock">
+
+            <div class="SecondBlock FirstCard ">  <div class="front">
+
+               <div class="imgcard"> </div>
+
+            </div>
+
+            <div class="back">я работаю</div>
+            
+        </div>
+            <div class="SecondBlock SecondCard ">
+
+                <div class="front">
+
+                    <div class="imgcard2"> </div>
+
+                </div>
+
+
+            <div class="back">я работаю</div>
+
+            </div>
+            <div class="SecondBlock ThirdCard">
+
+                <div class="front">
+
+                    <div class="imgcard3"> </div>
+
+                </div>
+            <div class="back">
+                <span>я работаю</span>
+            </div>
+
+            </div>
+            
+
+
+        </div>  
+
+            <div class="test">
+
+
+                <div class="GridPbText">
+
+
+                    <div class="vegetables">
+                        Овощи
+                    </div>
+                    <div class="vegetables">
+                        фрукты
+                    </div>
+                    <div class="vegetables">
+                        Животные продукты
+                    </div>
+    
+                    
+    
+    
+                </div>
+
+            </div>
+            
+            
+       <div class="GridPBlock">
+           
+           
+       </div>
+
+
+
+      <div class="addProduct">
+
+                <div class="addCard">
+
+                    <div class="addCardParrent">
+                        <div class="LinkAdd">
+                            <a  class="addCardBtn" href="#">Разместить свой товар</a> 
+                        </div>
+                    </div>
+
+            </div>
+
+      </div>
+
+
+
+        
+
+
+    </div>
+
+
+
+
+    <div class="ProductText">Каталог</div>
+
+
+
+
+    <div class="SearchMain">
+
+        <input class="Search" type="text" id="elastic">
+        <label class="imgSearch" for=""><img class="imgSearch" src="{% static 'img/search.svg'%}" alt=""></label>
+
+    </div>
+
+
+
+
+    
+
+   
+
+
+    
+
+      <section class="Catalog">
+
+        <div class="CardGrid">
+            {% for product in products %}
+            <div class="card">
+            
+
+
+                <img class="CardImg" src="{{ product.photo.url }}" alt="">
+                <div class="name_product">
+
+                    <p class="NameProduct"> {{ product.name }} </p>
+
+                </div>
+
+               
+                
+                <div class="description_product">
+
+                    <p>Описание самых лучших овощей и так далее</p>
+
+                </div>
+
+
+
+
+                <div class="product_price">
+
+                    <p> {{ product.price }}</p>
+                </div>
+
+
+                <div class="detailed">
+
+                    <button class="detailed_btn">Подробнее</button>
+
+
+                </div>
+
+                <div class="time_card">
+
+                    <button class="detailed_btn">Подробнее</button>
+
+
+                </div>
+
+            </div> 
+            {% endfor %}
+            
+    
+        </div>
+
+        <div class="LastBlock"><h2 class="WhySellH2">Что у нас можно купить?</h2>
+    
+            <p class="WhySellText">Мы были созданы для того что бы частные предприниматели 
+                могли продавать экологически чистый продукт обычным людям
+                в удобной форме.</p>
+            </div>
+
+    </section>
+
+</section> 
+
+    <footer>
+        <div class="FooterMenu">
+
+
+            <div class="contactFooter">
+
+                
+                <div class="vk">
+                    <a class="vklink" href="https://vk.com/public220048510 "><img class="VkIcon" src="{% static 'img/vk.svg'%}"  alt=""> 
+                    <p class="vklinktext">https://vk.com/public220048510</p>
+                    </a>
+                </div>
+
+                <div class="mail">
+                    <a class="maillink" href="https://vk.com/public220048510 "><img class="mailIcon" src="{% static 'img/mail.svg'%}"  alt=""> 
+                    <p class="maillinktext">https://vk.com/public220048510</p>
+                    </a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </footer>
+    
+
+
+
+    
+
+    
+
+
+
+
+        
+
+    
+
+
+
+
+
+
+    </div>
+
+    <script src ="{% static 'scripts/index/UserAgreement.js' %} " type="text/javascript"> </script>
+    <script src ="{% static 'scripts/index/search.js' %} " type="text/javascript"> </script>
+    
+    
+
+
+
+
+</body>
+
+</html>

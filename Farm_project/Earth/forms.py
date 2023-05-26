@@ -1,7 +1,27 @@
 from django import forms
-from .models import DataVegetables
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from .models import *
 
-class MyForm(forms.ModelForm):
+class SigUpForm(UserCreationForm):
+    '''Форма для регистрации юзера'''
+    username = forms.CharField(max_length=128)
+    email = forms.EmailField(max_length=200)
+    age = forms.CharField(max_length=100)
+    number_phone = forms.CharField(max_length=100)
+    adress = forms.CharField(max_length=1000)
+    first_name = forms.CharField(max_length=120)
+    last_name = forms.CharField(max_length=200)
+    
     class Meta:
-        model = DataVegetables
-        fields = ['title','price','description']
+        model = User
+        fields = ['username','first_name','last_name','age','number_phone','adress','email','password1','password2']
+
+class AddProductsForm(forms.ModelForm):
+    '''Форма для добавления овощей'''
+    class Meta:
+        model = ProductCard
+        fields = ['name','description','category','price','photo']
+
+
+
